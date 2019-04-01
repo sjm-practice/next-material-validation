@@ -4,7 +4,7 @@ const Home = () => (
   <div>
     <p>Hello Next.js - Home.</p>
     <Link href="/about">
-      <a>About Page</a>
+      <button type="button">About Page</button>
     </Link>
   </div>
 );
