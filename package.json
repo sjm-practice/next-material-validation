@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .js,.jsx",
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "formik": "^1.5.1",
     "next": "^8.0.3",
     "react": "^16.8.4",
