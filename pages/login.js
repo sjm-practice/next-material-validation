@@ -1,9 +1,5 @@
-import Layout from "../components/MyLayout";
+import React from "react";
 
-const Login = () => (
-  <Layout>
-    <p>Login page.</p>
-  </Layout>
-);
+const Login = () => <p>Login page.</p>;
 
 export default Login;

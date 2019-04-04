@@ -1,14 +1,10 @@
+import React from "react";
 import styled from "styled-components";
-import Layout from "../components/MyLayout";
 
 const MyTitle = styled.h1`
   color: blue;
 `;
 
-const About = () => (
-  <Layout>
-    <MyTitle>An About page.</MyTitle>
-  </Layout>
-);
+const About = () => <MyTitle>An About page.</MyTitle>;
 
 export default About;

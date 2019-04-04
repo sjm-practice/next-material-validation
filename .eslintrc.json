@@ -81,6 +81,6 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "warn"
   }
 }

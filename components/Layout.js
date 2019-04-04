@@ -7,7 +7,7 @@ const layoutStyle = {
   border: "1px solid #DDD",
 };
 
-const MyLayout = ({ children }) => {
+const Layout = ({ children }) => {
   return (
     <div style={layoutStyle}>
       <Header />
@@ -16,4 +16,4 @@ const MyLayout = ({ children }) => {
   );
 };
 
-export default MyLayout;
+export default Layout;
