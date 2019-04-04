@@ -1,5 +1,6 @@
 import React from "react";
 import App, { Container } from "next/app";
+import Meta from "../components/Meta";
 import Layout from "../components/Layout";
 
 class MyApp extends App {
@@ -18,6 +19,7 @@ class MyApp extends App {
 
     return (
       <Container>
+        <Meta />
         <Layout>
           <Component {...pageProps} />
         </Layout>
