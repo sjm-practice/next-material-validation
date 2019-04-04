@@ -1,8 +1,13 @@
+import styled from "styled-components";
 import Layout from "../components/MyLayout";
+
+const MyTitle = styled.h1`
+  color: blue;
+`;
 
 const About = () => (
   <Layout>
-    <p>An About page.</p>
+    <MyTitle>An About page.</MyTitle>
   </Layout>
 );
 
