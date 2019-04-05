@@ -1,50 +1,41 @@
 import React from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
+import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import BuildIcon from "@material-ui/icons/Build";
 
-// TODO: convert to material-ui styled component
-// const MyLink = styled.li`
-//   list-style: none;
-//   margin: 5px 0;
+const styles = theme => ({
+  root: {
+    width: "100%",
+    maxWidth: 360,
+    backgroundColor: theme.palette.background.paper,
+  },
+});
 
-//   a {
-//     text-decoration: none;
-//     color: green;
-//     font-family: "Arial";
-//   }
-
-//   a:hover {
-//     opacity: 0.6;
-//   }
-// `;
-
-const ShowLink = ({ show: { id, name } }) => (
-  <li>
+const ListItemLink = ({ show: { id, name } }) => (
+  <ListItem button>
+    <ListItemIcon>
+      <BuildIcon />
+    </ListItemIcon>
     <Link href={`/post?id=${id}`} as={`/p/${id}`}>
-      <a>{name}</a>
+      <ListItemText primary={name} />
     </Link>
-  </li>
+  </ListItem>
 );
 
-// TODO: convert to material-ui styled component
-// const Container = styled.div`
-//   h1 {
-//     font-family: "Arial";
-//   }
-
-//   ul {
-//     padding: 0;
-//   }
-// `;
-
-const Home = ({ shows }) => (
-  <div>
-    <h1>My Blog</h1>
-    <ul>
+const Home = ({ shows, classes }) => (
+  <div className={classes.root}>
+    <Typography variant="h4">Batman Shows</Typography>
+    <List component="nav">
       {shows.map(show => (
-        <ShowLink key={show.id} show={show} />
+        <ListItemLink key={show.id} show={show} />
       ))}
-    </ul>
+    </List>
   </div>
 );
 
@@ -59,4 +50,4 @@ Home.getInitialProps = async function getShowData() {
   };
 };
 
-export default Home;
+export default withStyles(styles)(Home);

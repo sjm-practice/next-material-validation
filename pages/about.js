@@ -1,10 +1,6 @@
 import React from "react";
+import Typography from "@material-ui/core/Typography";
 
-// TODO: convert to material-ui styled component
-// const MyTitle = styled.h1`
-//   color: blue;
-// `;
-
-const About = () => <h2>An About page.</h2>;
+const About = () => <Typography variant="h4">An About page.</Typography>;
 
 export default About;

@@ -1,19 +1,20 @@
 import React from "react";
+import { withStyles } from "@material-ui/core/styles";
 import Header from "./Header";
 
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: "1px solid #DDD",
+const styles = {
+  pageContainer: {
+    padding: "10px",
+  },
 };
 
-const Layout = ({ children }) => {
+const Layout = ({ children, classes }) => {
   return (
-    <div style={layoutStyle}>
+    <div>
       <Header />
-      {children}
+      <div className={classes.pageContainer}>{children}</div>
     </div>
   );
 };
 
-export default Layout;
+export default withStyles(styles)(Layout);
