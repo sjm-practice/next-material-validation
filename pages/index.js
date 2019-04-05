@@ -1,50 +1,51 @@
 import React from "react";
 import Link from "next/link";
 import fetch from "isomorphic-unfetch";
-import styled from "styled-components";
 
-const MyLink = styled.li`
-  list-style: none;
-  margin: 5px 0;
+// TODO: convert to material-ui styled component
+// const MyLink = styled.li`
+//   list-style: none;
+//   margin: 5px 0;
 
-  a {
-    text-decoration: none;
-    color: green;
-    font-family: "Arial";
-  }
+//   a {
+//     text-decoration: none;
+//     color: green;
+//     font-family: "Arial";
+//   }
 
-  a:hover {
-    opacity: 0.6;
-  }
-`;
+//   a:hover {
+//     opacity: 0.6;
+//   }
+// `;
 
 const ShowLink = ({ show: { id, name } }) => (
-  <MyLink>
+  <li>
     <Link href={`/post?id=${id}`} as={`/p/${id}`}>
       <a>{name}</a>
     </Link>
-  </MyLink>
+  </li>
 );
 
-const Container = styled.div`
-  h1 {
-    font-family: "Arial";
-  }
+// TODO: convert to material-ui styled component
+// const Container = styled.div`
+//   h1 {
+//     font-family: "Arial";
+//   }
 
-  ul {
-    padding: 0;
-  }
-`;
+//   ul {
+//     padding: 0;
+//   }
+// `;
 
 const Home = ({ shows }) => (
-  <Container>
+  <div>
     <h1>My Blog</h1>
     <ul>
       {shows.map(show => (
         <ShowLink key={show.id} show={show} />
       ))}
     </ul>
-  </Container>
+  </div>
 );
 
 Home.getInitialProps = async function getShowData() {
