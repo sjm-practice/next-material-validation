@@ -10,3 +10,4 @@
 * (TBD) SSR - compare what _app.js does in styled-components to material-ui examples
   * I think the styled-components example may do more / be more effective, by crawling all pages / components collecting styles / css using getInitialProps
   * the material-ui example only reads from getPageContext ??? (maybe not necessary - need more understanding)
+  * SEE material-styled-components branch
